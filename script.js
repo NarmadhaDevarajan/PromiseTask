@@ -1,4 +1,6 @@
 async function fetchData(){
+    try
+    {
     let promise=await fetch("https://jsonplaceholder.typicode.com/users");
     let response=await promise.json();
     console.log(response);
@@ -11,6 +13,11 @@ async function fetchData(){
     document.body.appendChild(para);
    document.body.appendChild(para1);
    document.body.appendChild(para2);
+    }
+    catch
+    {
+        console.error("Cannot fetch data");
+    }
     
 }
 
